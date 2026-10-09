@@ -1,0 +1,16 @@
+2026-10-09 20:26:49,995 ERROR Demo bildirimi gönderilemedi
+Traceback (most recent call last):
+  File "C:\Users\veyis\Documents\Codex\2026-10-09\referenced-chatgpt-conversation-this-is-an-2\outputs\AwuDeprem\app.py", line 200, in send_demo
+    notify(title, body, self.sound_var.get())
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\veyis\Documents\Codex\2026-10-09\referenced-chatgpt-conversation-this-is-an-2\outputs\AwuDeprem\app.py", line 121, in notify
+    raise RuntimeError("Windows toast için winotify kurulu değil. install.bat dosyasını çalıştırın.")
+RuntimeError: Windows toast için winotify kurulu değil. install.bat dosyasını çalıştırın.
+2026-10-09 20:26:52,695 ERROR Demo bildirimi gönderilemedi
+Traceback (most recent call last):
+  File "C:\Users\veyis\Documents\Codex\2026-10-09\referenced-chatgpt-conversation-this-is-an-2\outputs\AwuDeprem\app.py", line 200, in send_demo
+    notify(title, body, self.sound_var.get())
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\veyis\Documents\Codex\2026-10-09\referenced-chatgpt-conversation-this-is-an-2\outputs\AwuDeprem\app.py", line 121, in notify
+    raise RuntimeError("Windows toast için winotify kurulu değil. install.bat dosyasını çalıştırın.")
+RuntimeError: Windows toast için winotify kurulu değil. install.bat dosyasını çalıştırın.

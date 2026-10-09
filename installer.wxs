@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="AwuDeprem" Language="1055" Version="1.0.0" Manufacturer="AwuDeprem" UpgradeCode="5B447E5A-4762-4ACF-A513-4AE907881E91">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perUser" Platform="x64" />
+    <MajorUpgrade DowngradeErrorMessage="Daha yeni bir AwuDeprem surumu zaten kurulu." />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="INSTALLFOLDER" Name="AwuDeprem" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="APPSTARTMENU" Name="AwuDeprem" />
+      </Directory>
+      <Directory Id="DesktopFolder" />
+    </Directory>
+    <Feature Id="MainFeature" Title="AwuDeprem" Level="1">
+      <ComponentRef Id="Application" />
+      <ComponentRef Id="DesktopShortcut" />
+    </Feature>
+    <Component Id="Application" Directory="INSTALLFOLDER" Guid="{C31411A6-91A3-4BA1-B0A8-F815C3A76D4A}">
+      <RegistryValue Root="HKCU" Key="Software\AwuDeprem" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+      <File Id="AwuDepremExe" Source="$(var.AppExe)">
+        <Shortcut Id="StartMenuShortcut" Directory="APPSTARTMENU" Name="AwuDeprem" WorkingDirectory="INSTALLFOLDER" Advertise="no" />
+      </File>
+      <RemoveFolder Id="RemoveInstallFolder" Directory="INSTALLFOLDER" On="uninstall" />
+      <RemoveFolder Id="RemoveStartMenuFolder" Directory="APPSTARTMENU" On="uninstall" />
+    </Component>
+    <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="{FD20C438-1C1D-4A07-8FEF-BAF0A85952BD}">
+      <Condition>CREATE_DESKTOP_SHORTCUT</Condition>
+      <RegistryValue Root="HKCU" Key="Software\AwuDeprem" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+      <Shortcut Id="DesktopShortcutLink" Name="AwuDeprem" Target="[INSTALLFOLDER]AwuDeprem.exe" WorkingDirectory="INSTALLFOLDER" />
+    </Component>
+  </Product>
+</Wix>

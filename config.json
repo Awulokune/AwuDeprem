@@ -1,0 +1,9 @@
+{
+  "place_name": "İstanbul",
+  "latitude": 41.0082,
+  "longitude": 28.9784,
+  "min_magnitude": 3.5,
+  "max_distance_km": 100.0,
+  "sound_enabled": true,
+  "poll_interval_seconds": 30
+}
